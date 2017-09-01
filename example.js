@@ -10,9 +10,9 @@ retext()
     .process(doc, function (err, bobrilDom) {
         console.error(report(err || bobrilDom));
 
-        let stringifiedBobrilDom  = JSON.stringify(bobrilDom);
+        let stringifiedBobrilDom  = JSON.stringify(bobrilDom.contents);
 
-        let typeScriptTemplate = `export const page = '${stringifiedBobrilDom}'`;
+        let typeScriptTemplate = `export const page = \`${stringifiedBobrilDom}\``;
 
         fs.writeFileSync(`${__dirname}/exampleOutput.ts`, typeScriptTemplate, 'utf-8');
     });
