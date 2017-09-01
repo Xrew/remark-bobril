@@ -1,4 +1,11 @@
-# Created by .ignore support plugin (hsz.mobi)
-.idea
-node_modules
-exampleOutput.ts
+logs
+*.log
+npm-debug.log*
+node_modules/
+coverage
+build/
+.vscode
+!.vscode/tasks.js
+.idea/
+.npm
+.DS_Store
