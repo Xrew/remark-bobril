@@ -1,4 +1,4 @@
-import * as b from 'bobril';
+import {IBobrilChildren} from 'bobril';
 
 export enum AlignType {
   Left = 'left',
@@ -7,7 +7,7 @@ export enum AlignType {
 }
 
 export interface IData {
-  children: b.IBobrilChildren;
+  children: IBobrilChildren;
   align: (AlignType | null)[];
 }
 

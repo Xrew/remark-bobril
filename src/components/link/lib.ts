@@ -1,9 +1,9 @@
-import * as b from 'bobril';
+import {IBobrilChildren} from 'bobril';
 
 export interface IData {
   title: string | null;
   url: string;
-  children: b.IBobrilChildren;
+  children: IBobrilChildren;
 }
 
 export const create = (data: IData) => {

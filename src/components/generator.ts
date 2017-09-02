@@ -1,4 +1,4 @@
-import * as b from 'bobril';
+import {IBobrilChildren} from 'bobril';
 import * as Paragraph from './paragraph/lib';
 import * as Heading from './heading/lib';
 import * as Blockquote from './blockquote/lib';
@@ -44,7 +44,7 @@ enum NodeType {
   FootnoteDefinition = 'footnoteDefinition'
 }
 
-export function generate(node, children): b.IBobrilChildren {
+export function generate(node, children): IBobrilChildren {
 
   switch (node.type) {
     case NodeType.Paragraph :

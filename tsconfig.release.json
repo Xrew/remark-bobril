@@ -1,11 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "declaration": false,
-    "rootDir": ".",
-    "outDir": "build",
-    "removeComments": true,
-    "jsx": "react"
+    "outDir": "dist",
+    "removeComments": true
   },
   "include": [
     "src/**/*"

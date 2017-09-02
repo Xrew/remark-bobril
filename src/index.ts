@@ -1,15 +1,17 @@
 import * as ComponentGenerator from './components/generator';
 
-module.exports = attacher;
 
-function attacher(_options) {
+const attacher = function(_options) {
 
   this.Compiler = compile;
 
   function compile(node) {
     return convert2Bobril(node);
   }
-}
+};
+
+export default attacher;
+
 
 function convert2Bobril(node) {
   let children = node.children;

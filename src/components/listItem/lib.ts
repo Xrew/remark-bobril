@@ -1,7 +1,7 @@
-import * as b from 'bobril';
+import {IBobrilChildren} from 'bobril';
 
 export interface IData {
-  children: b.IBobrilChildren;
+  children: IBobrilChildren;
   loose: true | false;
   checked: true | false | null;
 }

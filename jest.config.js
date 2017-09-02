@@ -1,18 +1,16 @@
 module.exports = {
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   transform: {
-    '.(ts|tsx)': '<rootDir>/preprocessor.js'
+    '.(ts)': '<rootDir>/preprocessor.js'
   },
   moduleFileExtensions: [
     'ts',
-    'tsx',
-    'js',
-    'jsx'
+    'js'
   ],
-  testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.(ts|js)x?$',
+  testRegex: '(/tests/.*|(\\.|/)(test|spec))\\.(ts|js)?$',
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
-    'src/**/*.{ts,tsx,js,jsx}',
+    'src/**/*.{ts,js}',
     '!src/**/*.d.ts'
   ]
 };

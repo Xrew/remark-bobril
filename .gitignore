@@ -3,9 +3,10 @@ logs
 npm-debug.log*
 node_modules/
 coverage
-build/
+build-debug/
 .vscode
 !.vscode/tasks.js
 .idea/
 .npm
 .DS_Store
+dist/

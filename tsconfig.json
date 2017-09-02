@@ -1,26 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
+    "declaration": false,
+    "skipLibCheck": true,
     "allowJs": true,
-    "importHelpers": true,
-    "alwaysStrict": true,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "strictNullChecks": false,
-    "declaration": true
+    "lib": [
+      "es5",
+      "dom",
+      "es2015.core",
+      "es2015.promise"
+    ],
+    "removeComments": false,
+    "noLib": false,
+    "preserveConstEnums": false,
+    "experimentalDecorators": true,
+    "outDir": "build-debug"
   },
   "include": [
-    "src/**/*",
-    "tests/**/*"
+    "src/**/*"
   ]
 }
