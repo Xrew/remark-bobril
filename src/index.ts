@@ -16,7 +16,7 @@ function convert2Bobril(node) {
 
   let convertedChildren = [];
   if (children !== undefined) {
-    children.forEach(function (child) {
+    children.forEach((child) => {
       convertedChildren.push(convert2Bobril(child));
     });
   } else {
