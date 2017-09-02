@@ -21,6 +21,7 @@
     "build": "tsc -p tsconfig.json",
     "watch": "tsc -w -p tsconfig.json",
     "release": "tsc -p tsconfig.release.json",
+    "postrelease" : "gulp copy",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@types/jest": "*",
     "gulp": "*",
+    "gulp-cli": "^1.4.0",
     "jest": "*",
     "rimraf": "*",
     "tsutils": "*",
