@@ -1,6 +1,6 @@
 {
   "name": "remark-bobril",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Compile Markdown to Bobril with remark.",
   "author": "Tomáš Sychra",
   "license": "MIT",
