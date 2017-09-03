@@ -33,7 +33,7 @@ The generated content of variable `result` is:
   tag: 'div',
   children: [
     {
-      tag: 'h1',
+      tag: 'h2',
       children: [
         'Hello world'
       ]
