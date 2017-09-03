@@ -20,12 +20,14 @@ For more information, please check: [unified](https://github.com/unifiedjs/unifi
  remark()
     .use(remarkBobril)
     .process(markdown, (_err, bobrilDom) => {
+            const result = JSON.stringify(bobrilDom.contents);
             
             console.log(result);
           }
         );
 ```
 
+The generated content of variable `result` is:
 ```javascript
 {
   tag: 'div',
@@ -40,6 +42,7 @@ For more information, please check: [unified](https://github.com/unifiedjs/unifi
 }
 ```
 
+As you can see, there is on more wrapper `div` element in the `result` than you can expect. This `root` element is always generated.
 
 
 
