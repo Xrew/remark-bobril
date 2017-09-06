@@ -1,7 +1,7 @@
 import * as ComponentGenerator from './components/generator';
 
 
-const attacher = function(_options) {
+export default function(_options) {
 
   this.Compiler = compile;
 
@@ -9,9 +9,6 @@ const attacher = function(_options) {
     return convert2Bobril(node);
   }
 };
-
-export default attacher;
-
 
 function convert2Bobril(node) {
   let children = node.children;
