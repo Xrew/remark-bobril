@@ -9,7 +9,7 @@ export interface IData {
 
 export const create = (data: IData) => {
   return {
-    tag: 'ul',
+    tag: data.ordered ? 'ol' : 'ul',
     children: data.children
   };
 };

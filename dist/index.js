@@ -5,7 +5,7 @@
 }(this, (function () { 'use strict';
 
 function unwrapExports (x) {
-	return x && x.__esModule ? x['default'] : x;
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
 function createCommonjsModule(fn, module) {
@@ -23,6 +23,8 @@ exports.create = function (data) {
 };
 });
 
+unwrapExports(lib);
+
 var lib$2 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -33,6 +35,8 @@ exports.create = function (data) {
     };
 };
 });
+
+unwrapExports(lib$2);
 
 var lib$4 = createCommonjsModule(function (module, exports) {
 "use strict";
@@ -45,44 +49,66 @@ exports.create = function (data) {
 };
 });
 
+unwrapExports(lib$4);
+
 var lib$6 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
     return {
-        tag: 'code',
-        className: data.language,
+        tag: 'pre',
         children: {
-            tag: 'pre',
+            tag: 'code',
+            className: data.language,
             children: data.children
         }
     };
 };
 });
 
+unwrapExports(lib$6);
+
 var lib$8 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
     return {
-        tag: 'ul',
+        tag: 'code',
+        className: data.language,
         children: data.children
     };
 };
 });
+
+unwrapExports(lib$8);
 
 var lib$10 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
     return {
-        tag: 'li',
+        tag: data.ordered ? 'ol' : 'ul',
         children: data.children
     };
 };
 });
 
+unwrapExports(lib$10);
+
 var lib$12 = createCommonjsModule(function (module, exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.create = function (data) {
+    return {
+        tag: 'li',
+        children: data.children,
+    };
+};
+});
+
+unwrapExports(lib$12);
+
+var lib$14 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function () {
@@ -92,7 +118,9 @@ exports.create = function () {
 };
 });
 
-var lib$14 = createCommonjsModule(function (module, exports) {
+unwrapExports(lib$14);
+
+var lib$16 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function () {
@@ -101,6 +129,8 @@ exports.create = function () {
     };
 };
 });
+
+unwrapExports(lib$16);
 
 var table = createCommonjsModule(function (module, exports) {
 "use strict";
@@ -119,6 +149,8 @@ exports.create = function (data) {
 };
 });
 
+unwrapExports(table);
+
 var tr = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -129,6 +161,8 @@ exports.create = function (data) {
     };
 };
 });
+
+unwrapExports(tr);
 
 var td = createCommonjsModule(function (module, exports) {
 "use strict";
@@ -141,7 +175,9 @@ exports.create = function (data) {
 };
 });
 
-var lib$16 = createCommonjsModule(function (module, exports) {
+unwrapExports(td);
+
+var lib$18 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
@@ -152,7 +188,9 @@ exports.create = function (data) {
 };
 });
 
-var lib$18 = createCommonjsModule(function (module, exports) {
+unwrapExports(lib$18);
+
+var lib$20 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
@@ -163,7 +201,9 @@ exports.create = function (data) {
 };
 });
 
-var lib$20 = createCommonjsModule(function (module, exports) {
+unwrapExports(lib$20);
+
+var lib$22 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
@@ -174,7 +214,9 @@ exports.create = function (data) {
 };
 });
 
-var lib$22 = createCommonjsModule(function (module, exports) {
+unwrapExports(lib$22);
+
+var lib$24 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
@@ -189,7 +231,9 @@ exports.create = function (data) {
 };
 });
 
-var lib$24 = createCommonjsModule(function (module, exports) {
+unwrapExports(lib$24);
+
+var lib$26 = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.create = function (data) {
@@ -205,9 +249,12 @@ exports.create = function (data) {
 };
 });
 
+unwrapExports(lib$26);
+
 var generator = createCommonjsModule(function (module, exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+
 
 
 
@@ -272,26 +319,30 @@ function generate(node, children) {
                 children: children
             });
         case NodeType.InclineCode:
+            return lib$8.create({
+                language: node.lang || '',
+                children: children
+            });
         case NodeType.Code:
             return lib$6.create({
                 language: node.lang || '',
                 children: children
             });
         case NodeType.List:
-            return lib$8.create({
+            return lib$10.create({
                 children: children,
                 loose: node.loose,
                 start: node.start,
                 ordered: node.ordered
             });
         case NodeType.ListItem:
-            return lib$10.create({
+            return lib$12.create({
                 children: children,
                 loose: node.loose,
                 checked: node.checked
             });
         case NodeType.Break:
-            return lib$12.create();
+            return lib$14.create();
         case NodeType.Table:
             return table.create({
                 align: node.align,
@@ -306,27 +357,27 @@ function generate(node, children) {
                 children: children
             });
         case NodeType.ThematicBreak:
-            return lib$14.create();
+            return lib$16.create();
         case NodeType.Emphasis:
-            return lib$16.create({
-                children: children
-            });
-        case NodeType.Strong:
             return lib$18.create({
                 children: children
             });
-        case NodeType.Delete:
+        case NodeType.Strong:
             return lib$20.create({
                 children: children
             });
-        case NodeType.Link:
+        case NodeType.Delete:
             return lib$22.create({
+                children: children
+            });
+        case NodeType.Link:
+            return lib$24.create({
                 url: node.url,
                 title: node.title,
                 children: children
             });
         case NodeType.Image:
-            return lib$24.create({
+            return lib$26.create({
                 title: node.title,
                 url: node.url,
                 alt: node.alt,
@@ -345,6 +396,8 @@ function generate(node, children) {
 }
 exports.generate = generate;
 });
+
+unwrapExports(generator);
 
 var build = createCommonjsModule(function (module, exports) {
 "use strict";

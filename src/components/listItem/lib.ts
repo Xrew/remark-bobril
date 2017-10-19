@@ -9,6 +9,6 @@ export interface IData {
 export const create = (data: IData) => {
   return {
     tag: 'li',
-    children: data.children
+    children: data.children,
   };
 };

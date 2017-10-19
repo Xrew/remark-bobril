@@ -3,6 +3,7 @@ import * as Paragraph from './paragraph/lib';
 import * as Heading from './heading/lib';
 import * as Blockquote from './blockquote/lib';
 import * as Code from './code/lib';
+import * as CodeInline from './codeInline/lib';
 import * as List from './list/lib';
 import * as ListItem from './listItem/lib';
 import * as Break from './break/lib';
@@ -70,6 +71,11 @@ export function generate(node, children): IBobrilChildren {
       });
 
     case  NodeType.InclineCode:
+      return CodeInline.create({
+        language: node.lang || '',
+        children: children
+      });
+
     case  NodeType.Code:
       return Code.create({
         language: node.lang || '',
