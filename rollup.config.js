@@ -2,11 +2,12 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
 export default {
-  entry: 'build/index.js',
-  dest: 'dist/index.js',
-  moduleName: "remarkBobril",
-  format: 'umd',
-
+  input: 'build/index.js',
+  name: "remarkBobril",
+  output: {
+    file: 'dist/index.js',
+    format: 'umd'
+  },
   plugins: [
     resolve({
       jsnext: true,

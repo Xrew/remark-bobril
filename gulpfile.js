@@ -15,4 +15,4 @@ gulp.task('copy', function () {
     .pipe(gulp.dest('dist/'))
 });
 
-gulp.task('default', ['copy']);
+gulp.task('default', gulp.series('copy'));
