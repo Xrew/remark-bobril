@@ -13,7 +13,7 @@ For more information, please check: [unified](https://github.com/unifiedjs/unifi
 ## Programmatic usage in browser
 ```typescript
  import * as remark from 'remark';
- import * as remarkBobril 'remark-bobril';
+ import * as remarkBobril from 'remark-bobril';
 
  const markdown = '## Hello world';
  

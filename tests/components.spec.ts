@@ -9,9 +9,7 @@ describe('convert markdown to bobril', () => {
       remark()
         .use(remarkBobril)
         .process(markdown, (_err, bobrilDom) => {
-          console.log(bobrilDom)
           const result = processResult(bobrilDom);
-
             expect(result.tag).toEqual('h1');
             expect(result.children[0]).toEqual('CSS Injection');
             done();
@@ -22,6 +20,6 @@ describe('convert markdown to bobril', () => {
 });
 
 function processResult(node) {
-  const resultWithRoot = node.contents;
+  const resultWithRoot = node.result;
   return resultWithRoot.children[0];
 }
